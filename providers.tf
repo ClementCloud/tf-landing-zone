@@ -1,12 +1,10 @@
-resource "aws_s3_bucket" "cjbucket2" {
-    bucket = "cjtestbucket072923"
-
+provider "aws" {
+  region = "us-west-2"
 }
-
 
 terraform {
   backend "s3" {
-    bucket = "cjtestbucket072923"
+    bucket = "cjtfstatestore-0825"
     key    = "tfstate/tfstatetest1"
     region = "us-west-2"
   }
